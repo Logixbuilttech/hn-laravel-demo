@@ -38,7 +38,7 @@
                     <span class="d-block fs-6 text-danger mt-2"> {{ $message }}</span>
                 @enderror
                 <div class="">
-                    <button type="submit" class="btn btn-dark mb-2 "> Share </button>
+                    <button type="submit" class="btn btn-secondary mb-2 "> Share </button>
                 </div>
             </form>
         @else
