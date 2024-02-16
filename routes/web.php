@@ -53,7 +53,7 @@ Route::get('/lang/{lang}', function($lang){
     return redirect()->route('dashboard');
 })->name('lang');
 
-Route::resource('ideas', IdeaController::class)->except(['index', 'create'])->middleware('auth');
+Route::resource('ideas', IdeaController::class)->except(['index', 'create', 'show'])->middleware('auth');
 
 Route::resource('ideas', IdeaController::class)->only(['show']);
 

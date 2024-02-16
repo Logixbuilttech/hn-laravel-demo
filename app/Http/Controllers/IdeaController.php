@@ -26,11 +26,11 @@ class IdeaController extends Controller
         return redirect()->route('dashboard')->with('success', 'Idea created Succesfully');
     }
 
-    public function destroy(Idea $id) {
+    public function destroy(Idea $idea) {
 
-        $this->authorize('delete', $id);
+        $this->authorize('delete', $idea);
 
-        $id->delete();
+        $idea->delete();
 
         return redirect()->route('dashboard')->with('destroy', 'Idea deleted Succesfully');
     }

@@ -11,13 +11,13 @@
                 </div>
             </div>
             <div class="d-flex">
+                <a href="{{ route('ideas.show', $idea->id) }}">View</a>
                 @auth
-                @can('update', $idea)
-                        <a href="{{ route('ideas.show', $idea->id) }}"  >View</a>
+                    @can('update', $idea)
+                        <a class="px-2" href="{{ route('ideas.edit', $idea->id) }}">Edit</a>
                         <form method="POST" action="{{ route('ideas.destroy', $idea->id) }}">
                             @csrf
                             @method('delete')
-                            <a class="px-2" href="{{ route('ideas.edit', $idea->id) }}">Edit</a>
                             <button type="submit" class="ms-1 btn btn-danger btn-sm">X</button>
                         </form>
                     @endcan
